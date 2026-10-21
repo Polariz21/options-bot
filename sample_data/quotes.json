@@ -1,0 +1,76 @@
+{
+ "data": {
+  "results": [
+   {
+    "quote": {
+     "symbol": "NBIS",
+     "last_trade_price": "171.55",
+     "adjusted_previous_close": "171.45"
+    }
+   },
+   {
+    "quote": {
+     "symbol": "TSM",
+     "last_trade_price": "427.90",
+     "adjusted_previous_close": "425.08"
+    }
+   },
+   {
+    "quote": {
+     "symbol": "VOO",
+     "last_trade_price": "709.91",
+     "adjusted_previous_close": "706.8"
+    }
+   },
+   {
+    "quote": {
+     "symbol": "SPCX",
+     "last_trade_price": "163.27",
+     "adjusted_previous_close": "147.79"
+    }
+   },
+   {
+    "quote": {
+     "symbol": "TSLA",
+     "last_trade_price": "386.78",
+     "adjusted_previous_close": "373.71"
+    }
+   },
+   {
+    "quote": {
+     "symbol": "CRDO",
+     "last_trade_price": "183.30",
+     "adjusted_previous_close": "171.51"
+    }
+   },
+   {
+    "quote": {
+     "symbol": "VRT",
+     "last_trade_price": "212.04",
+     "adjusted_previous_close": "203.56"
+    }
+   },
+   {
+    "quote": {
+     "symbol": "IREN",
+     "last_trade_price": "27.50",
+     "adjusted_previous_close": "26.62"
+    }
+   },
+   {
+    "quote": {
+     "symbol": "XE",
+     "last_trade_price": "10.20",
+     "adjusted_previous_close": "10.95"
+    }
+   },
+   {
+    "quote": {
+     "symbol": "SPY",
+     "last_trade_price": "706.00",
+     "adjusted_previous_close": "703.50"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "IREN": [
+  {
+   "date": "2025-05-14",
+   "type": "earnings",
+   "timing": "pm"
+  },
+  {
+   "date": "2025-08-28",
+   "type": "earnings",
+   "timing": "pm"
+  },
+  {
+   "date": "2025-11-06",
+   "type": "earnings",
+   "timing": "pm"
+  },
+  {
+   "date": "2026-02-05",
+   "type": "earnings",
+   "timing": "pm"
+  },
+  {
+   "date": "2026-05-07",
+   "type": "earnings",
+   "timing": "pm"
+  },
+  {
+   "date": "2026-08-27",
+   "type": "earnings",
+   "timing": "pm"
+  },
+  {
+   "date": "2026-11-05",
+   "type": "earnings",
+   "timing": "pm"
+  }
+ ],
+ "SPCX": [
+  {
+   "date": "2026-10-20",
+   "type": "earnings",
+   "timing": "pm"
+  },
+  {
+   "date": "2026-11-18",
+   "type": "investor_day"
+  }
+ ],
+ "TSLA": [
+  {
+   "date": "2026-10-21",
+   "type": "earnings",
+   "timing": "pm"
+  },
+  {
+   "date": "2026-11-06",
+   "type": "shareholder_meeting"
+  }
+ ],
+ "CRDO": [
+  {
+   "date": "2026-12-02",
+   "type": "earnings",
+   "timing": "pm"
+  }
+ ]
+}

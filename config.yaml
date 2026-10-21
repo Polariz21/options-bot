@@ -1,0 +1,95 @@
+# Options Bot v2 — every rule is relative to account size. Edit numbers, not code.
+
+account:
+  number: "932707813"          # read-only; the bot never trades
+  cash_floor_pct: 5            # keep ≥5% of account uninvested
+
+sizing:                        # all as % of total account value
+  risk_per_trade_pct: 12       # max LOSS on one idea if the stop is honored (12% of $1,612 ≈ $193) — Sam's call, 2026-10-21
+  max_premium_pct: 20          # hard ceiling on any single premium, regardless of Kelly (raised with risk 12% so it doesn't silently override)
+  options_bucket_pct: 25       # total options premium outstanding can't exceed this
+  kelly_fraction: 0.25         # quarter-Kelly — CoP estimates are noisy, full Kelly blows up
+  kelly_mode: flag             # "flag": report "no edge" but size by risk budget (default)
+                               # "ceiling": Kelly caps the size — blocks most long options; honest but strict
+  stop_loss_pct: 50            # default exit on any long option
+  # Sam's stated appetite ("$200 loss no problem") is ~12% risk. 5% is the
+  # conservative default; 8 is "a little risk". Above 10 the bot will tell you off.
+
+# Risk lanes — every contract is assigned to one lane by DTE, then judged by that
+# lane's rules. The brief shows the best idea per lane so you pick your risk.
+profiles:
+  low:                         # "I want to be right eventually" — time is the cushion
+    dte: [45, 180]
+    min_delta: 0.45            # closer to the money, behaves more like stock
+    min_chance_of_profit: 0.35
+    max_theta_pct_per_day: 1.5
+    max_sigma_to_breakeven: 0.8
+    risk_multiplier: 1.0       # × risk_per_trade_pct
+  balanced:
+    dte: [21, 45]
+    min_delta: 0.35
+    min_chance_of_profit: 0.28
+    max_theta_pct_per_day: 3
+    max_sigma_to_breakeven: 1.2
+    risk_multiplier: 0.8
+  high:                        # "I want it to move this month" — catalysts live here
+    dte: [7, 21]
+    min_delta: 0.25
+    min_chance_of_profit: 0.22
+    max_theta_pct_per_day: 6
+    max_sigma_to_breakeven: 1.5
+    risk_multiplier: 0.6       # smaller size for the riskier lane — that's the whole point
+    require_catalyst: true     # high lane needs an event or a strong conviction score to show up
+
+filters:                       # apply to every lane
+  max_spread_pct: 10
+  min_open_interest: 500
+  rsi_chase_call: 75           # flag calls when RSI above this (buying the top)
+  rsi_chase_put: 25            # flag puts when RSI below this
+  iv_rv_expensive: 1.4         # flag when implied vol / 30d realized vol exceeds this
+  earnings_flag_days: 3        # flag (don't block) contracts spanning earnings
+
+triggers:                      # Tier 0 pulse → decides whether to run a full scan
+  move_pct: 4                  # any holding moved ≥4% on the day
+  stop_proximity_pct: 10       # an open option is within 10% of its stop or target
+  earnings_within_days: 3
+  weekly_review_day: Monday    # full allocation review + grading
+  max_symbols_per_scan: 3      # scan only the most-triggered symbols; caps tool calls
+
+relocation:
+  max_single_position_pct: 30
+  min_position_usd: 50
+  trim_after_gain_pct: 25
+  review_after_loss_pct: -20
+  target_cash_pct: 20          # the Allocator aims to keep this much dry powder
+
+watchlist:
+  extra: ["SPY", "QQQ"]        # scanned alongside holdings when triggered
+
+# Conviction = evidence that smart money is accumulating + a dated catalyst.
+# Scored 0–100 in universe.py from cached data; it tilts ranking and unlocks the high lane.
+conviction:
+  weights:
+    insider_cluster: 25        # ≥3 distinct insiders net-buying in 6 months
+    insider_net_buy: 15        # net insider buying (not selling) last 2 quarters
+    institutional_qoq: 20      # institutional ownership rising 2 consecutive quarters (13F, ~45d stale)
+    analyst_upgrades: 10       # net upgrades last 90d
+    event_runup: 15            # stock drifted up into its last N events (median run-up > 0, hit rate ≥ 60%)
+    event_reaction: 15         # post-event moves lopsided (≥ 65% same direction over ≥ 5 events)
+  min_for_high_lane: 45        # high lane needs this OR an event inside the contract window
+  min_events_for_stats: 4
+  runup_window_days: 5         # measure drift from T-5 to T-1
+  catalysts_count: ["earnings", "shareholder_meeting", "investor_day", "product_event", "lockup_expiry", "index_inclusion", "fda", "conference"]
+
+# Daily research finds peers of what you already hold; weekly it enriches them.
+discovery:
+  peers_per_holding: 3         # ask the Researcher for N comparable names per holding
+  max_universe: 25             # holdings + candidates, hard cap (keeps daily pricing to ≤3 quote calls)
+  refresh_fundamentals_days: 30   # insiders/13F/analysts re-fetched monthly (they move quarterly anyway)
+  refresh_events_days: 7
+  drop_after_days_without_signal: 45
+  research_searches_per_run: 5 # cap on Bigdata.com / web lookups per run
+
+report:
+  top_n_ideas: 3
+  include_rejected: true

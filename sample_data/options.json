@@ -1,0 +1,164 @@
+[
+ {
+  "symbol": "IREN",
+  "type": "call",
+  "strike": 27,
+  "expiration": "2026-10-23",
+  "quote": {
+   "mark_price": "1.00",
+   "bid_price": "0.98",
+   "ask_price": "1.02",
+   "chance_of_profit_long": "0.32",
+   "delta": "0.50",
+   "theta": "-0.23",
+   "open_interest": "3100",
+   "implied_volatility": "1.34",
+   "break_even_price": "28.00"
+  },
+  "instrument_id": "c0a5010d-3a19-4f4f-963c-6fb3102f7e7d"
+ },
+ {
+  "symbol": "IREN",
+  "type": "call",
+  "strike": 28,
+  "expiration": "2026-11-20",
+  "quote": {
+   "mark_price": "3.015",
+   "bid_price": "2.98",
+   "ask_price": "3.05",
+   "chance_of_profit_long": "0.281",
+   "delta": "0.524",
+   "theta": "-0.0569",
+   "open_interest": "4616",
+   "implied_volatility": "1.084",
+   "break_even_price": "31.02"
+  },
+  "instrument_id": "eb28680b-74f5-415b-91b6-38d3a0587d67"
+ },
+ {
+  "symbol": "IREN",
+  "type": "call",
+  "strike": 30,
+  "expiration": "2026-11-20",
+  "quote": {
+   "mark_price": "2.265",
+   "bid_price": "2.24",
+   "ask_price": "2.29",
+   "chance_of_profit_long": "0.239",
+   "delta": "0.435",
+   "theta": "-0.0555",
+   "open_interest": "5720",
+   "implied_volatility": "1.073",
+   "break_even_price": "32.27"
+  },
+  "instrument_id": "5269b90c-1814-4538-a96c-0d0660383dc8"
+ },
+ {
+  "symbol": "IREN",
+  "type": "call",
+  "strike": 28,
+  "expiration": "2026-11-06",
+  "quote": {
+   "mark_price": "2.245",
+   "bid_price": "2.23",
+   "ask_price": "2.26",
+   "chance_of_profit_long": "0.285",
+   "delta": "0.497",
+   "theta": "-0.0818",
+   "open_interest": "1049",
+   "implied_volatility": "1.149",
+   "break_even_price": "30.25"
+  },
+  "instrument_id": "f6c214e2-0392-4365-b74d-a86f2799ed4a"
+ },
+ {
+  "symbol": "VOO",
+  "type": "call",
+  "strike": 710,
+  "expiration": "2026-10-23",
+  "quote": {
+   "mark_price": "1.83",
+   "bid_price": "1.60",
+   "ask_price": "2.05",
+   "chance_of_profit_long": "0.26",
+   "delta": "0.39",
+   "theta": "-0.68",
+   "open_interest": "420",
+   "implied_volatility": "0.13",
+   "break_even_price": "711.83"
+  },
+  "instrument_id": "610ddc38-e7be-4661-ba0f-ce0eb6c5b330"
+ },
+ {
+  "symbol": "VOO",
+  "type": "put",
+  "strike": 705,
+  "expiration": "2026-10-23",
+  "quote": {
+   "mark_price": "1.275",
+   "bid_price": "1.00",
+   "ask_price": "1.55",
+   "chance_of_profit_long": "0.215",
+   "delta": "-0.26",
+   "theta": "-0.585",
+   "open_interest": "61",
+   "implied_volatility": "0.147",
+   "break_even_price": "703.72"
+  },
+  "instrument_id": "90ea573c-f3fe-453b-816d-d387e7b3cf62"
+ },
+ {
+  "symbol": "SPCX",
+  "type": "put",
+  "strike": 155,
+  "expiration": "2026-10-23",
+  "quote": {
+   "mark_price": "0.865",
+   "bid_price": "0.86",
+   "ask_price": "0.87",
+   "chance_of_profit_long": "0.16",
+   "delta": "-0.17",
+   "theta": "-0.544",
+   "open_interest": "4913",
+   "implied_volatility": "0.738",
+   "break_even_price": "154.13"
+  },
+  "instrument_id": "626cabff-9ed8-41d2-bf1f-ebfb33b3e842"
+ },
+ {
+  "symbol": "XE",
+  "type": "call",
+  "strike": 10.5,
+  "expiration": "2026-10-23",
+  "quote": {
+   "mark_price": "0.25",
+   "bid_price": "0.00",
+   "ask_price": "0.50",
+   "chance_of_profit_long": "0.20",
+   "delta": "0.40",
+   "theta": "-0.08",
+   "open_interest": "169",
+   "implied_volatility": "1.1",
+   "break_even_price": "10.75"
+  },
+  "instrument_id": "xe-sample"
+ },
+ {
+  "symbol": "SPY",
+  "type": "call",
+  "strike": 710,
+  "expiration": "2026-11-20",
+  "instrument_id": "spy-sample",
+  "quote": {
+   "mark_price": "1.45",
+   "bid_price": "1.42",
+   "ask_price": "1.48",
+   "chance_of_profit_long": "0.31",
+   "delta": "0.42",
+   "theta": "-0.05",
+   "open_interest": "18000",
+   "implied_volatility": "0.14",
+   "break_even_price": "711.45"
+  }
+ }
+]

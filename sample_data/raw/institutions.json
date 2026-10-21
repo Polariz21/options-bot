@@ -1,0 +1,24 @@
+{
+ "IREN": {
+  "ownership_pct_by_quarter": [
+   38.1,
+   41.5,
+   46.2
+  ],
+  "as_of": "2026-06-30"
+ },
+ "SPCX": {
+  "ownership_pct_by_quarter": [
+   55.0,
+   54.2,
+   56.1
+  ]
+ },
+ "CRDO": {
+  "ownership_pct_by_quarter": [
+   70.1,
+   72.3,
+   74.0
+  ]
+ }
+}
